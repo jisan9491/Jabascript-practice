@@ -88,26 +88,40 @@ if (totalAmt>= 550) {
     console.log('Oops! You got no discount(2)!!!')
 }*/
 
+//offer-3:
+var totalAmt = 1200;
+var paymentMethod = 'visa';
 
-var totalAmt = 1010;
-var paymentMethod = 'bkash';
-
-if (totalAmt>= 550) {
-    if(paymentMethod === 'bkash'){ //nested condition
-        console.log('You got 50 Taka cashback for paying using bkash');
+if (paymentMethod === 'bkash') {
+    if (totalAmt >= 5500) {
+        console.log('You got 100 taka cashback for paying using bkash!')
     }
-    else if (totalAmt >= 1010){
-        if (paymentMethod === "visa") {
-            console.log('You got 100 Taka discount for paying using visa card')
+    else if (totalAmt >= 550) {
+        console.log('You got 50 Taka cashback for paying using bkash!');
+    }
+}
+else if (paymentMethod === 'nagad') {
+    if(totalAmt >=5500) {
+        console.log('You got 100 taka cashback for paying using Nagad!');
+    }
+}
+else if (paymentMethod === 'visa') {
+    if(totalAmt >=5500) {
+        var discount = (totalAmt * 5) / 100 ;
+        if(discount<500){
+            //console.log('You got' + discount + 'taka cashback for paying using Visa Card!')
+            console.log(`You got ${discount} taka cashback for paying using Visa Card!`)
         }
-        else {
-            console.log('Oops! You got no discount!!!')
-        }
-        
+        else{
+            console.log(`You got 500 taka cashback for paying using Visa Card!`)
+       
     }
     
-} else {
-    console.log('Oops! You got no discount(2)!!!')
+}
+else if (totalAmt >= 1010) {
+    console.log(`You got 100 taka cashback for paying using Visa Card!`);
+}
+
 }
 
 
